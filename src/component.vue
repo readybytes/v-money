@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <v-text-field type="tel"
          :value="formattedValue"
          @change="change"
