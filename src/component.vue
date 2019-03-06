@@ -1,9 +1,12 @@
 <template lang="html">
-  <input type="tel"
+  <v-text-field type="tel"
          :value="formattedValue"
          @change="change"
          v-money="{precision, decimal, thousands, prefix, suffix}"
-         class="v-money" />
+         class="v-money" 
+         :suffix="suffix"
+         :label="label"
+/>
 </template>
 
 <script>
@@ -14,6 +17,8 @@ import {format, unformat} from './utils'
 export default {
   name: 'Money',
   props: {
+    suffix:null,
+    label:null,
     value: {
       required: true,
       type: [Number, String],
