@@ -13,6 +13,9 @@
 import money from './directive'
 import defaults from './options'
 import {format, unformat} from './utils'
+import vuetify from 'vuetify'
+
+Vue.use(vuetify)
 
 export default {
   name: 'Money',
