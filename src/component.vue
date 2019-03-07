@@ -2,9 +2,10 @@
   <v-text-field
     type="tel"
     :value="formattedValue"
-    @change="change"
-    v-money="{precision, decimal, thousands, prefix, suffix}"
+    @input="change"
+    v-money="{precision, decimal, thousands, prefix}"
     class="v-money"
+    :suffix="suffix"
   />
 </template>
 <script>
@@ -45,10 +46,6 @@ export default {
     prefix: {
       type: String,
       default: () => defaults.prefix
-    },
-    suffix: {
-      type: String,
-      default: () => defaults.suffix
     }
   },
 
@@ -77,7 +74,7 @@ export default {
       this.$emit(
         "input",
         this.masked ? value : unformat(value, this.precision)
-      );
+      )
     }
   }
 };

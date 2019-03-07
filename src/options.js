@@ -1,6 +1,6 @@
 export default {
   prefix: '',
-  suffix: '',
+  //suffix: '',
   thousands: ',',
   decimal: '.',
   precision: 2
