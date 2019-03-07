@@ -1,25 +1,20 @@
 <template>
-  <div>
-    <v-text-field
-      type="tel"
-      :value="formattedValue"
-      @change="change"
-      v-money="{precision, decimal, thousands, prefix, suffix}"
-      class="v-money"
-      :suffix="suffix"
-      :label="label"
-    />
-    <h1>gdfhjgkd</h1>
-  </div>
+  <v-text-field
+    type="tel"
+    :value="formattedValue"
+    @change="change"
+    v-money="{precision, decimal, thousands, prefix, suffix}"
+    class="v-money"
+  />
 </template>
-
 <script>
+// import Vue from "vue";
 import money from "./directive";
 import defaults from "./options";
 import { format, unformat } from "./utils";
-import vuetify from "vuetify";
+// import vuetify from "vuetify";
 
-Vue.use(vuetify);
+// Vue.use(vuetify);
 
 export default {
   name: "Money",
@@ -78,14 +73,13 @@ export default {
   },
 
   methods: {
-    change(evt) {
+    change(value) {
       this.$emit(
         "input",
-        this.masked
-          ? evt.target.value
-          : unformat(evt.target.value, this.precision)
+        this.masked ? value : unformat(value, this.precision)
       );
     }
   }
 };
 </script>
+

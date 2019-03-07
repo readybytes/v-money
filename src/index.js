@@ -1,13 +1,13 @@
 import Money from './component'
 import VMoney from './directive'
 import options from './options'
-const VERSION = proccess.env.VERSION
+//const VERSION = proccess.env.VERSION
 
 export {
   Money,
   VMoney,
   options,
-  VERSION
+//  VERSION
 }
 
 function install (Vue, globalOptions) {
