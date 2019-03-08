@@ -3,6 +3,7 @@
     type="tel"
     :value="formattedValue"
     @input="change"
+    @change="onAfterChange"
     v-money="{precision, decimal, thousands, prefix}"
     class="v-money"
     :suffix="suffix"
@@ -74,7 +75,13 @@ export default {
       this.$emit(
         "input",
         this.masked ? value : unformat(value, this.precision)
-      )
+      );
+    },
+    onAfterChange(value) {
+      this.$emit(
+        "onAmountChange",
+        this.masked ? value : unformat(value, this.precision)
+      );
     }
   }
 };
