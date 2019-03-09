@@ -19,7 +19,7 @@ export default function (el, binding) {
   el.oninput = function () {
     var positionFromEnd = el.value.length - el.selectionEnd
     el.value = format(el.value, opt)
-    positionFromEnd = Math.max(positionFromEnd, opt.suffix.length) // right
+    positionFromEnd = Math.max(positionFromEnd, 0) // right
     positionFromEnd = el.value.length - positionFromEnd
     positionFromEnd = Math.max(positionFromEnd, opt.prefix.length + 1) // left
     setCursor(el, positionFromEnd)
@@ -27,7 +27,7 @@ export default function (el, binding) {
   }
 
   el.onfocus = function () {
-    setCursor(el, el.value.length - opt.suffix.length)
+    setCursor(el, el.value.length - 0)
   }
 
   el.oninput()
