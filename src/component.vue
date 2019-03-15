@@ -6,6 +6,8 @@
     v-money="{precision, decimal, thousands, prefix}"
     class="v-money"
     :suffix="suffix"
+    :hint="hint"
+    persistent-hint
   />
 </template>
 <script>
@@ -22,6 +24,7 @@ export default {
   props: {
     suffix: null,
     label: null,
+    hint: null,
     value: {
       required: true,
       type: [Number, String],
@@ -79,5 +82,6 @@ export default {
   }
 };
 </script>
+
 
 
